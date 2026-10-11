@@ -1,0 +1,28 @@
+:root {
+    --max-width: 600px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --max-width: 800px;
+    }
+
+    section {
+        margin-bottom: 8rem;
+    }
+}

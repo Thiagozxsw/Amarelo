@@ -1,0 +1,28 @@
+:root {
+  --color-honey: #FFB347;
+  --color-amber: #FFBF00;
+  --color-cream: #FFFDD0;
+  --color-warm-white: #FAF9F6;
+  --color-graphite: #333333;
+
+  --font-primary: 'system-ui', -apple-system, sans-serif;
+  --font-serif: 'Georgia', serif;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 1.75rem;
+  --font-size-body: 1.1rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-size-h1: 4rem;
+    --font-size-h2: 2.5rem;
+    --font-size-body: 1.25rem;
+  }
+}

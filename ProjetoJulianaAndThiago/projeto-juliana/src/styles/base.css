@@ -1,0 +1,35 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body);
+  background-color: var(--color-warm-white);
+  color: var(--color-graphite);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--color-graphite);
+  line-height: 1.2;
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--color-amber);
+  outline-offset: 4px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

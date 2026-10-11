@@ -1,0 +1,503 @@
+/* Opening */
+.opening {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: var(--spacing-lg) var(--spacing-base);
+    text-align: center;
+    gap: 1.25rem;
+}
+
+.opening h1 {
+    font-size: clamp(2rem, 9vw, 4rem);
+    color: var(--color-amber);
+    letter-spacing: -0.02em;
+}
+
+.opening-flower {
+    width: 5.5rem;
+    height: auto;
+    color: var(--color-honey);
+}
+
+.opening-tagline {
+    color: var(--color-graphite);
+    opacity: 0.92;
+}
+
+.opening p {
+    font-size: 1.15rem;
+    max-width: 22rem;
+}
+
+.opening-extra {
+    max-width: 26rem;
+    font-size: 1.05rem;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 240ms ease, transform 240ms ease;
+}
+
+.opening-extra.visible {
+    opacity: 0.95;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .opening-extra {
+        transition: none;
+        transform: none;
+    }
+}
+
+#enter-btn {
+    background-color: var(--color-honey);
+    color: var(--color-graphite);
+    border: none;
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+#enter-btn:hover {
+    background-color: var(--color-amber);
+}
+
+/* Chapters */
+.chapters-container {
+    padding: 0;
+}
+
+.chapter {
+    padding: var(--spacing-xl) var(--spacing-base) var(--spacing-lg);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.chapter.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chapter h2 {
+    margin-bottom: 1rem;
+}
+
+.chapter p {
+    max-width: 42ch;
+    font-size: 1.05rem;
+}
+
+/* Constellation */
+.chapter-constelacao .constellation-card {
+    margin-top: 1.25rem;
+    background: var(--color-cream);
+    border: 1px solid rgba(255, 191, 0, 0.35);
+    border-left: 4px solid var(--color-amber);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.chapter-constelacao .constellation-map {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-height: 280px;
+    margin: 0.25rem auto 1rem;
+    overflow: hidden;
+}
+
+.chapter-constelacao .constellation-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.chapter-constelacao .constellation-line {
+    stroke: rgba(255, 191, 0, 0.55);
+    stroke-width: 0.9;
+    stroke-linecap: round;
+    opacity: 0.7;
+    transition: opacity 180ms ease, stroke-width 180ms ease;
+}
+
+.chapter-constelacao .constellation-line.is-active {
+    opacity: 1;
+    stroke-width: 1.6;
+    stroke: rgba(255, 180, 71, 0.95);
+}
+
+.chapter-constelacao .star-btn {
+    position: absolute;
+    width: 3.05rem;
+    height: 3.05rem;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    color: var(--color-graphite);
+}
+
+.chapter-constelacao .star-btn svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 180ms ease, filter 180ms ease;
+}
+
+.chapter-constelacao .star-btn.is-selected {
+    z-index: 2;
+}
+
+.chapter-constelacao .star-btn.is-selected svg {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 6px rgba(255, 191, 0, 0.35));
+}
+
+.chapter-constelacao .constellation-reading {
+    background: var(--color-warm-white);
+    border-radius: 0.9rem;
+    padding: 0.9rem 0.95rem;
+    border: 1px solid rgba(255, 191, 0, 0.22);
+}
+
+.chapter-constelacao .constellation-reading-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+}
+
+.chapter-constelacao .constellation-reading-text {
+    font-size: 1.02rem;
+}
+
+.chapter-constelacao .constellation-clear {
+    margin-top: 0.9rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--color-honey);
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font-weight: 650;
+    color: var(--color-graphite);
+}
+
+.chapter-constelacao .constellation-clear:hover {
+    background: var(--color-amber);
+}
+
+.chapter-constelacao .constellation-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0 0.15rem;
+    margin: 0.25rem 0 0.75rem;
+}
+
+.chapter-constelacao .star-list-btn {
+    padding: 0.55rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 191, 0, 0.35);
+    background: transparent;
+    cursor: pointer;
+    color: var(--color-graphite);
+    font-weight: 600;
+}
+
+.chapter-constelacao .star-list-btn:hover {
+    border-color: rgba(255, 191, 0, 0.7);
+}
+
+.chapter-constelacao .star-list-btn[aria-pressed="true"] {
+    background: rgba(255, 191, 0, 0.18);
+    border-color: rgba(255, 191, 0, 0.7);
+}
+
+/* Dualidade */
+.dualidade-content {
+    background: var(--color-cream);
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 191, 0, 0.35);
+    border-left: 4px solid var(--color-amber);
+    margin-top: 1.25rem;
+}
+
+.tough {
+    font-weight: 700;
+}
+
+.sweet {
+    font-style: italic;
+}
+
+.toggle-dualidade {
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    background: var(--color-honey);
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Garden (Jarro de Mel) */
+.chapter-garden {
+    text-align: left;
+}
+
+.jar {
+    display: flex;
+    justify-content: center;
+    margin: 0.75rem 0 0;
+}
+
+.jar-svg {
+    width: min(320px, 92vw);
+    height: auto;
+}
+
+.jar-composer-wrap {
+    margin-top: 1rem;
+}
+
+.jar-open-btn {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: var(--color-honey);
+    border: none;
+    border-radius: 0.9rem;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.jar-open-btn:focus-visible {
+    outline: 3px solid var(--color-amber);
+    outline-offset: 3px;
+}
+
+.jar-composer {
+    margin-top: 1rem;
+    background: var(--color-cream);
+    border: 1px solid rgba(255, 191, 0, 0.35);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.jar-composer-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+}
+
+.jar-label {
+    display: block;
+    font-weight: 650;
+    margin-bottom: 0.35rem;
+}
+
+.jar-composer-body textarea {
+    width: 100%;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    padding: 0.65rem 0.7rem;
+    border-radius: 0.85rem;
+    border: 1px solid rgba(255, 191, 0, 0.35);
+    resize: vertical;
+    min-height: 6.5rem;
+}
+
+.jar-hint {
+    margin-top: 0.55rem;
+    opacity: 0.85;
+    font-size: 0.95rem;
+}
+
+.jar-error {
+    margin-top: 0.55rem;
+    padding: 0.55rem 0.65rem;
+    background: rgba(255, 191, 0, 0.15);
+    border: 1px solid rgba(255, 191, 0, 0.5);
+    border-radius: 0.85rem;
+    color: var(--color-graphite);
+}
+
+.jar-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.85rem;
+}
+
+.jar-actions button {
+    flex: 1;
+    padding: 0.75rem 0.9rem;
+    border-radius: 0.85rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.jar-review-btn,
+.jar-confirm-btn {
+    background: var(--color-honey);
+    color: var(--color-graphite);
+}
+
+.jar-cancel-btn,
+.jar-edit-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 191, 0, 0.35);
+    color: var(--color-graphite);
+}
+
+.jar-saving {
+    margin-top: 0.75rem;
+    font-style: italic;
+}
+
+.jar-review {
+    margin-top: 1rem;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 1rem;
+    padding: 0.9rem 0.95rem;
+    border: 1px solid rgba(255, 191, 0, 0.22);
+}
+
+.jar-preview {
+    margin-top: 0.35rem;
+    white-space: pre-wrap;
+}
+
+.jar-status {
+    margin-top: 0.7rem;
+}
+
+.jar-history {
+    margin-top: 1.25rem;
+    background: var(--color-warm-white);
+    border: 1px solid rgba(255, 191, 0, 0.25);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.jar-history-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.65rem;
+}
+
+.jar-history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.jar-history-item {
+    border-top: 1px solid rgba(255, 191, 0, 0.18);
+    padding-top: 0.85rem;
+    margin-top: 0.85rem;
+}
+
+.jar-history-item:first-child {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.jar-history-text {
+    margin-top: 0.35rem;
+}
+
+.jar-empty {
+    margin-top: 0.4rem;
+    opacity: 0.85;
+}
+
+.jar-animate .jar-drop {
+    transform-origin: center;
+    animation: jarDrop 850ms ease-out both;
+}
+
+.jar-animate .jar-drop circle,
+.jar-animate .jar-drop path {
+    opacity: 0.95;
+}
+
+@keyframes jarDrop {
+    0% {
+        transform: translateY(-6px);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.95;
+    }
+    100% {
+        transform: translateY(18px);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .jar-animate .jar-drop {
+        animation: none;
+        transform: none;
+    }
+}
+
+/* Footer */
+.site-footer {
+    padding: var(--spacing-xl) var(--spacing-base);
+    background: var(--color-honey);
+    color: var(--color-graphite);
+    text-align: center;
+}
+
+.music-section, .personal-message {
+    margin-bottom: 1.5rem;
+}
+
+.final-flower {
+    width: 5.5rem;
+    height: auto;
+    margin: 1.75rem auto 1rem;
+}
+
+.final-flower circle {
+    opacity: 0.98;
+}
+
+.closing {
+    font-style: italic;
+    opacity: 0.85;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .chapter {
+        transition: none;
+        transform: none;
+        opacity: 1;
+    }
+
+    .fade-in {
+        animation: none;
+    }
+
+    .constellation-line {
+        transition: none;
+    }
+
+    .star-btn svg {
+        transition: none;
+    }
+
+    .opening-extra {
+        transition: none;
+        transform: none;
+    }
+}

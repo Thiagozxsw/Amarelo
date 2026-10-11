@@ -1,0 +1,16 @@
+/* Movement-only helpers. Chapter reveal styles live in components.css. */
+
+.fade-in {
+    animation: fadeIn 0.9s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in {
+        animation: none;
+    }
+}
